@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import fonts */
+@font-face {
+  font-family: 'Departure Mono';
+  src: url('/assets/fonts/DepartureMono-Regular.woff2') format('woff2'),
+       url('/assets/fonts/DepartureMono-Regular.woff') format('woff'),
+       url('/assets/fonts/DepartureMono-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Define theme variables */
+:root {
+  --font-inter: 'JetBrains Mono', monospace;
+  --font-departure: 'Departure Mono', monospace;
+  --color-transparent-white: rgba(255, 255, 255, 0.87);
+  
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Base styles */
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-departure) !important;
+  }
+
+  body {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Link styles */
+a {
+  @apply font-medium;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Utility classes */
+.font-departure {
+  font-family: var(--font-departure);
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+} 

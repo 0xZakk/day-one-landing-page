@@ -1,5 +1,4 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -7,5 +6,137 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-	<Welcome />
+	<!-- Hero Section -->
+	<section class="relative flex items-end h-[75vh] bg-[#3D4A3A]">
+		<div class="container mx-auto px-8 pb-16 text-left">
+			<h1 class="text-5xl md:text-6xl font-bold mb-4 text-white font-departure">
+				Day One Academy
+			</h1>
+			<p class="text-xl md:text-2xl mb-8 max-w-2xl text-[#E5E5E5]">
+				A community for creatively ambitious people learning to build with AI
+			</p>
+			<div class="flex flex-col sm:flex-row gap-4">
+				<button class="px-6 py-3 bg-[#D4A73A] text-white font-medium rounded-lg hover:bg-[#c29732] transition-colors cursor-pointer uppercase">
+					Start Learning
+				</button>
+				<button class="px-6 py-3 border border-white text-white font-medium rounded-lg hover:bg-[#4b5a48] transition-colors cursor-pointer uppercase">
+					See How it Works
+				</button>
+			</div>
+		</div>
+	</section>
+	
+	<!-- What is Day One Section -->
+	<section class="py-16 bg-gray-50 dark:bg-gray-800">
+		<div class="container mx-auto px-8">
+			<h2 class="text-3xl md:text-4xl font-bold mb-8 text-[#1C1C1C] dark:text-[#E5E5E5] font-departure">What is Day One?</h2>
+			<ul class="space-y-4 text-lg mb-10 text-[#1C1C1C] dark:text-[#E5E5E5]">
+				<li class="flex items-start">
+					<span class="text-[#D4A73A] dark:text-[#D4A73A] mr-2">›</span>
+					<span>We believe in starting before you're ready.</span>
+				</li>
+				<li class="flex items-start">
+					<span class="text-[#D4A73A] dark:text-[#D4A73A] mr-2">›</span>
+					<span>In experimenting instead of optimizing.</span>
+				</li>
+				<li class="flex items-start">
+					<span class="text-[#D4A73A] dark:text-[#D4A73A] mr-2">›</span>
+					<span>In using AI not just to move faster, but to make better things.</span>
+				</li>
+			</ul>
+			<button class="px-6 py-3 bg-[#D4A73A] text-white font-medium rounded-lg hover:bg-[#c29732] transition-colors cursor-pointer uppercase">
+				Read the Manifesto
+			</button>
+		</div>
+	</section>
+	
+	<!-- What You Can Do Here Section -->
+	<section class="py-16">
+		<div class="container mx-auto px-8">
+			<h2 class="text-3xl md:text-4xl font-bold mb-12 text-[#1C1C1C] dark:text-[#E5E5E5] font-departure">What You Can Do Here?</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+				<!-- Card 1 -->
+				<div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-t-4 border-[#D4A73A]">
+					<div class="text-3xl mb-4">
+						<i data-lucide="graduation-cap" class="text-[#D4A73A]"></i>
+					</div>
+					<h3 class="text-xl font-semibold mb-2 text-[#1C1C1C] dark:text-[#E5E5E5] font-departure">Courses</h3>
+					<p class="text-[#1C1C1C] dark:text-[#E5E5E5]">Self-paced labs to build fluency fast.</p>
+				</div>
+				
+				<!-- Card 2 -->
+				<div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-t-4 border-[#D4A73A]">
+					<div class="text-3xl mb-4">
+						<i data-lucide="newspaper" class="text-[#D4A73A]"></i>
+					</div>
+					<h3 class="text-xl font-semibold mb-2 text-[#1C1C1C] dark:text-[#E5E5E5] font-departure">Newsletter</h3>
+					<p class="text-[#1C1C1C] dark:text-[#E5E5E5]">Weekly experiments, tools, and notes from the frontier.</p>
+				</div>
+				
+				<!-- Card 3 -->
+				<div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-t-4 border-[#D4A73A]">
+					<div class="text-3xl mb-4">
+						<i data-lucide="message-circle-more" class="text-[#D4A73A]"></i>
+					</div>
+					<h3 class="text-xl font-semibold mb-2 text-[#1C1C1C] dark:text-[#E5E5E5] font-departure">Community</h3>
+					<p class="text-[#1C1C1C] dark:text-[#E5E5E5]">A forum and network for builders, freelancers, and thinkers.</p>
+				</div>
+				
+				<!-- Card 4 -->
+				<div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-t-4 border-[#D4A73A]">
+					<div class="text-3xl mb-4">
+						<i data-lucide="folder" class="text-[#D4A73A]"></i>
+					</div>
+					<h3 class="text-xl font-semibold mb-2 text-[#1C1C1C] dark:text-[#E5E5E5] font-departure">Resources</h3>
+					<p class="text-[#1C1C1C] dark:text-[#E5E5E5]">Templates, GPTs, walkthroughs.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<!-- Latest Experiments Section -->
+	<section class="py-16 bg-gray-50 dark:bg-gray-800">
+		<div class="container mx-auto px-8">
+			<h2 class="text-3xl md:text-4xl font-bold mb-6 text-[#1C1C1C] dark:text-[#E5E5E5] font-departure">Latest Experiments</h2>
+			<p class="text-lg mb-12 max-w-3xl text-[#1C1C1C] dark:text-[#E5E5E5]">
+				Every week, we try something new with AI.<br>
+				These are our favorite experiments, tools, and builds this month:
+			</p>
+			
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<!-- Experiment Card 1 -->
+				<div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer">
+					<div class="h-40 bg-[#E9EDE8] dark:bg-[#2D362B] rounded-md flex items-center justify-center mb-6">
+						<i data-lucide="sticky-note" class="text-[#D4A73A] w-10 h-10"></i>
+					</div>
+					<h3 class="text-xl font-semibold mb-3 text-[#1C1C1C] dark:text-[#E5E5E5] font-departure">Summarize 5 academic papers in 10 minutes</h3>
+					<div class="mt-4 flex justify-end">
+						<span class="text-[#D4A73A] dark:text-[#D4A73A]">→</span>
+					</div>
+				</div>
+				
+				<!-- Experiment Card 2 -->
+				<div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer">
+					<div class="h-40 bg-[#E9EDE8] dark:bg-[#2D362B] rounded-md flex items-center justify-center mb-6">
+						<i data-lucide="bot" class="text-[#D4A73A] w-10 h-10"></i>
+					</div>
+					<h3 class="text-xl font-semibold mb-3 text-[#1C1C1C] dark:text-[#E5E5E5] font-departure">Create a character assistant with GPTs</h3>
+					<div class="mt-4 flex justify-end">
+						<span class="text-[#D4A73A] dark:text-[#D4A73A]">→</span>
+					</div>
+				</div>
+				
+				<!-- Experiment Card 3 -->
+				<div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer">
+					<div class="h-40 bg-[#E9EDE8] dark:bg-[#2D362B] rounded-md flex items-center justify-center mb-6">
+						<i data-lucide="chart-column-big" class="text-[#D4A73A] w-10 h-10"></i>
+					</div>
+					<h3 class="text-xl font-semibold mb-3 text-[#1C1C1C] dark:text-[#E5E5E5] font-departure">Visualize your thinking with AI diagrams</h3>
+					<div class="mt-4 flex justify-end">
+						<span class="text-[#D4A73A] dark:text-[#D4A73A]">→</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 </Layout>

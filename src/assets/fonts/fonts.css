@@ -1,0 +1,27 @@
+/* Departure Mono Font */
+@font-face {
+  font-family: 'Departure Mono';
+  src: url('/public/fonts/DepartureMono-Regular.woff2') format('woff2'),
+       url('/public/fonts/DepartureMono-Regular.woff') format('woff'),
+       url('/public/fonts/DepartureMono-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* JetBrains Mono Font */
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+} 
