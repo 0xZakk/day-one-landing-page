@@ -1,8 +1,8 @@
 ---
 // Import the global CSS file with Tailwind directives
-import '../styles/global.css';
-import Nav from '../components/Nav.astro';
-import Footer from '../components/Footer.astro';
+import "../styles/global.css";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
 
 // Script for Lucide icons
 const currentYear = new Date().getFullYear();
@@ -10,104 +10,153 @@ const currentPage = Astro.url.pathname;
 
 // Declare lucide for TypeScript
 declare global {
-	interface Window {
-		lucide: {
-			createIcons: () => void;
-		};
-	}
+  interface Window {
+    lucide: {
+      createIcons: () => void;
+    };
+  }
 }
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<!-- Favicon -->
-		<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
-		<link rel="icon" type="image/x-icon" href="/assets/img/favicon/favicon.ico">
-		<link rel="manifest" href="/site.webmanifest">
-		<!-- End Favicon -->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="preload" href="/assets/fonts/DepartureMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-		<script src="https://unpkg.com/lucide@latest"></script>
-		<meta name="generator" content={Astro.generator} />
-		<title>Day One Academy</title>
-	</head>
-	<body
-		class="m-0 min-h-screen min-w-[320px] bg-[#ffffff] font-mono text-base font-normal text-[#1C1C1C] dark:bg-[#242424] dark:text-[#E5E5E5]"
-	>
-		<Nav currentPage={currentPage} />
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/img/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/img/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/img/favicon/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/assets/img/favicon/favicon.ico"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <!-- End Favicon -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="preload"
+      href="/assets/fonts/DepartureMono-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <meta name="generator" content={Astro.generator} />
+    <title>Day One Academy</title>
+  </head>
+  <body
+    class="m-0 min-h-screen min-w-[320px] bg-[#ffffff] font-mono text-base font-normal text-[#1C1C1C] dark:bg-[#242424] dark:text-[#E5E5E5]"
+  >
+    <Nav currentPage={currentPage} />
 
-		<!-- Main content slot -->
-		<slot />
+    <!-- Main content slot -->
+    <slot />
 
-		<Footer currentYear={currentYear} />
+    <Footer currentYear={currentYear} />
 
-		<script>
-			// Script for Lucide icons
-			document.addEventListener('DOMContentLoaded', function() {
-				if (typeof window.lucide !== 'undefined') {
-					window.lucide.createIcons();
-				}
-			});
+    <script>
+      // Script for Lucide icons
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof window.lucide !== "undefined") {
+          window.lucide.createIcons();
+        }
 
-			// Desktop menu hover effect
-			const navLinks = document.querySelectorAll('.nav-link');
-			const hoverIndicator = document.querySelector('.hover-indicator');
-			
-			if (hoverIndicator instanceof HTMLElement) {
-				navLinks.forEach(link => {
-					link.addEventListener('mouseenter', function(this: HTMLElement) {
-						if (hoverIndicator instanceof HTMLElement) {
-							const linkRect = this.getBoundingClientRect();
-							const navRect = this.parentElement?.getBoundingClientRect() || new DOMRect();
-							
-							hoverIndicator.style.width = `${linkRect.width}px`;
-							hoverIndicator.style.left = `${linkRect.left - navRect.left}px`;
-							hoverIndicator.style.opacity = '1';
-						}
-					});
-				});
-			}
-			
-			const navbar = document.querySelector('nav > div.hidden');
-			if (navbar) {
-				navbar.addEventListener('mouseleave', function() {
-					if (hoverIndicator instanceof HTMLElement) {
-						hoverIndicator.style.opacity = '0';
-					}
-				});
-			}
-			
-			// Mobile menu toggle
-			const mobileMenuButton = document.getElementById('mobileMenuButton');
-			const mobileMenu = document.getElementById('mobileMenu');
-			const hamburgerIcon = document.getElementById('hamburgerIcon');
-			const closeIcon = document.getElementById('closeIcon');
-			
-			if (mobileMenuButton && mobileMenu) {
-				mobileMenuButton.addEventListener('click', function() {
-					// Toggle menu visibility
-					if (mobileMenu.classList.contains('hidden')) {
-						mobileMenu.classList.remove('hidden');
-						if (hamburgerIcon instanceof HTMLElement) hamburgerIcon.style.display = 'none';
-						if (closeIcon instanceof HTMLElement) closeIcon.style.display = 'block';
-						document.body.classList.add('overflow-hidden');
-					} else {
-						mobileMenu.classList.add('hidden');
-						if (hamburgerIcon instanceof HTMLElement) hamburgerIcon.style.display = 'block';
-						if (closeIcon instanceof HTMLElement) closeIcon.style.display = 'none';
-						document.body.classList.remove('overflow-hidden');
-					}
-				});
-			}
-		</script>
-	</body>
+        // Desktop menu hover effect
+        const navLinks = document.querySelectorAll(".nav-link");
+        const hoverIndicator = document.querySelector(".hover-indicator");
+
+        if (hoverIndicator instanceof HTMLElement) {
+          navLinks.forEach((link) => {
+            link.addEventListener("mouseenter", function (this: HTMLElement) {
+              if (hoverIndicator instanceof HTMLElement) {
+                const linkRect = this.getBoundingClientRect();
+                const navRect =
+                  this.parentElement?.getBoundingClientRect() || new DOMRect();
+
+                hoverIndicator.style.width = `${linkRect.width}px`;
+                hoverIndicator.style.left = `${linkRect.left - navRect.left}px`;
+                hoverIndicator.style.opacity = "1";
+              }
+            });
+          });
+        }
+
+        const navbar = document.querySelector("nav > div.hidden");
+        if (navbar) {
+          navbar.addEventListener("mouseleave", function () {
+            if (hoverIndicator instanceof HTMLElement) {
+              hoverIndicator.style.opacity = "0";
+            }
+          });
+        }
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById("mobileMenuButton");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const hamburgerIcon = document.getElementById("hamburgerIcon");
+        const closeIcon = document.getElementById("closeIcon");
+
+        if (mobileMenuButton && mobileMenu && hamburgerIcon && closeIcon) {
+          mobileMenuButton.addEventListener("click", function () {
+            // Toggle menu visibility
+            if (mobileMenu.classList.contains("hidden")) {
+              mobileMenu.classList.remove("hidden");
+              hamburgerIcon.classList.add("hidden");
+              closeIcon.classList.remove("hidden");
+              document.body.classList.add("overflow-hidden");
+            } else {
+              console.log("hiding the mobile menu");
+              mobileMenu.classList.add("hidden");
+              hamburgerIcon.classList.remove("hidden");
+              closeIcon.classList.add("hidden");
+              document.body.classList.remove("overflow-hidden");
+            }
+          });
+
+          // Add event listener to close mobile menu on link click
+          const mobileMenuLinks = mobileMenu.querySelectorAll("a");
+          mobileMenuLinks.forEach((link) => {
+            link.addEventListener("click", function () {
+              mobileMenu.classList.add("hidden");
+              hamburgerIcon.classList.remove("hidden");
+              closeIcon.classList.add("hidden");
+              document.body.classList.remove("overflow-hidden");
+            });
+          });
+
+          // Ensure correct icon toggle logic
+          if (mobileMenu.classList.contains("hidden")) {
+            hamburgerIcon.classList.remove("hidden");
+            closeIcon.classList.add("hidden");
+          } else {
+            hamburgerIcon.classList.add("hidden");
+            closeIcon.classList.remove("hidden");
+          }
+        }
+      });
+    </script>
+  </body>
 </html>
 
 <!-- Removed the global styles since Tailwind will handle this -->
