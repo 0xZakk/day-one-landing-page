@@ -1,5 +1,35 @@
 ---
 const { currentPage } = Astro.props;
+
+// Define the interface for navigation items
+interface NavItem {
+  label: string;
+  href: string;
+  external?: boolean;
+}
+
+// Define navigation configurations
+const defaultNav: NavItem[] = [
+  { label: "About", href: "#what-is-day-one" },
+  { label: "Newsletter", href: "#newsletter" },
+  { label: "Experiments", href: "#latest-experiments" },
+  { label: "Community", href: "https://tally.so/r/3y7DK0", external: true },
+];
+
+const challengeNav: NavItem[] = [
+  { label: "Home", href: "/" },
+  { label: "Challenge", href: "#summary" },
+  { label: "Inspiration", href: "#inspiration" },
+  { label: "Guidelines", href: "#guidelines" },
+  { label: "Schedule", href: "#schedule" },
+  { label: "Studio", href: "#studio" },
+  { label: "Prizes", href: "#prizes" },
+];
+
+// Determine current path and select appropriate navigation
+const path = Astro.url.pathname;
+const isChallengePage = path.includes('/challenges');
+const navItems = isChallengePage ? challengeNav : defaultNav;
 ---
 
 <nav class="fixed top-6 left-0 right-0 z-50 flex justify-center">
@@ -18,44 +48,19 @@ const { currentPage } = Astro.props;
     class="fixed inset-0 bg-[#3D4A3A] z-[55] flex flex-col items-start justify-center px-12 hidden md:hidden"
   >
     <ul class="w-full space-y-16">
-      <li>
-        <a
-          href="https://tally.so/r/3y7DK0"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="block text-4xl text-[#E5E5E5] hover:text-[#D4A73A] transition-colors uppercase font-departure"
-          style="color: #E5E5E5 !important;"
-        >
-          Community
-        </a>
-      </li>
-      <li>
-        <a
-          href="#what-is-day-one"
-          class="block text-4xl text-[#E5E5E5] hover:text-[#D4A73A] transition-colors uppercase font-departure"
-          style="color: #E5E5E5 !important;"
-        >
-          About
-        </a>
-      </li>
-      <li>
-        <a
-          href="#newsletter"
-          class="block text-4xl text-[#E5E5E5] hover:text-[#D4A73A] transition-colors uppercase font-departure"
-          style="color: #E5E5E5 !important;"
-        >
-          Newsletter
-        </a>
-      </li>
-      <li>
-        <a
-          href="#latest-experiments"
-          class="block text-4xl text-[#E5E5E5] hover:text-[#D4A73A] transition-colors uppercase font-departure"
-          style="color: #E5E5E5 !important;"
-        >
-          Experiments
-        </a>
-      </li>
+      {navItems.map(item => (
+        <li>
+          <a
+            href={item.href}
+            target={item.external ? "_blank" : null}
+            rel={item.external ? "noopener noreferrer" : null}
+            class="block text-4xl text-[#E5E5E5] hover:text-[#D4A73A] transition-colors uppercase font-departure"
+            style="color: #E5E5E5 !important;"
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
     </ul>
   </div>
 
@@ -67,35 +72,16 @@ const { currentPage } = Astro.props;
       class="hover-indicator absolute h-8 bg-[#D4A73A]/25 rounded-full transition-all duration-300 ease-in-out opacity-0 pointer-events-none"
     >
     </div>
-    <a
-      href="https://tally.so/r/3y7DK0"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="relative px-5 py-2 text-[#E5E5E5] hover:text-[#D4A73A] transition-colors z-10 nav-link uppercase"
-      style="color: #E5E5E5 !important;"
-    >
-      Community
-    </a>
-    <a
-      href="#what-is-day-one"
-      class="relative px-5 py-2 text-[#E5E5E5] hover:text-[#D4A73A] transition-colors z-10 nav-link uppercase"
-      style="color: #E5E5E5 !important;"
-    >
-      About
-    </a>
-    <a
-      href="#newsletter"
-      class="relative px-5 py-2 text-[#E5E5E5] hover:text-[#D4A73A] transition-colors z-10 nav-link uppercase"
-      style="color: #E5E5E5 !important;"
-    >
-      Newsletter
-    </a>
-    <a
-      href="#latest-experiments"
-      class="relative px-5 py-2 text-[#E5E5E5] hover:text-[#D4A73A] transition-colors z-10 nav-link uppercase"
-      style="color: #E5E5E5 !important;"
-    >
-      Experiments
-    </a>
+    {navItems.map(item => (
+      <a
+        href={item.href}
+        target={item.external ? "_blank" : null}
+        rel={item.external ? "noopener noreferrer" : null}
+        class="relative px-5 py-2 text-[#E5E5E5] hover:text-[#D4A73A] transition-colors z-10 nav-link uppercase"
+        style="color: #E5E5E5 !important;"
+      >
+        {item.label}
+      </a>
+    ))}
   </div>
 </nav>
