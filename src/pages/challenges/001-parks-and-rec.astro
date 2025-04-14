@@ -1,5 +1,12 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import spring from "../../assets/img/challenges/001/spring.png";
+import summer from "../../assets/img/challenges/001/summer.png";
+import fall from "../../assets/img/challenges/001/fall.png";
+import winter from "../../assets/img/challenges/001/winter.png";
+import birds from "../../assets/img/challenges/001/birds.png";
+import studioHours from "../../assets/img/challenges/001/studio-hours.png";
 ---
 
 <Layout>
@@ -59,29 +66,29 @@ import Layout from "../../layouts/Layout.astro";
         >
           <div class="flex w-full gap-4 px-4">
             <div class="w-full flex-shrink-0 snap-center">
-              <img
-                src="/src/assets/img/challenges/001/spring.png"
+              <Image
+                src={spring}
                 alt="Spring"
                 class="w-full h-auto object-contain"
               />
             </div>
             <div class="w-full flex-shrink-0 snap-center">
-              <img
-                src="/src/assets/img/challenges/001/summer.png"
+              <Image
+                src={summer}
                 alt="Summer"
                 class="w-full h-auto object-contain"
               />
             </div>
             <div class="w-full flex-shrink-0 snap-center">
-              <img
-                src="/src/assets/img/challenges/001/fall.png"
+              <Image
+                src={fall}
                 alt="Fall"
                 class="w-full h-auto object-contain"
               />
             </div>
             <div class="w-full flex-shrink-0 snap-center">
-              <img
-                src="/src/assets/img/challenges/001/winter.png"
+              <Image
+                src={winter}
                 alt="Winter"
                 class="w-full h-auto object-contain"
               />
@@ -91,23 +98,23 @@ import Layout from "../../layouts/Layout.astro";
 
         <!-- Medium Screen Grid (2x2) -->
         <div class="hidden md:grid lg:hidden grid-cols-2 gap-4">
-          <img
-            src="/src/assets/img/challenges/001/spring.png"
+          <Image
+            src={spring}
             alt="Spring"
             class="w-full h-auto object-contain"
           />
-          <img
-            src="/src/assets/img/challenges/001/summer.png"
+          <Image
+            src={summer}
             alt="Summer"
             class="w-full h-auto object-contain"
           />
-          <img
-            src="/src/assets/img/challenges/001/fall.png"
+          <Image
+            src={fall}
             alt="Fall"
             class="w-full h-auto object-contain"
           />
-          <img
-            src="/src/assets/img/challenges/001/winter.png"
+          <Image
+            src={winter}
             alt="Winter"
             class="w-full h-auto object-contain"
           />
@@ -115,23 +122,23 @@ import Layout from "../../layouts/Layout.astro";
 
         <!-- Large Screen Row with Tilted Images -->
         <div class="hidden lg:flex justify-between items-center gap-4">
-          <img
-            src="/src/assets/img/challenges/001/spring.png"
+          <Image
+            src={spring}
             alt="Spring"
             class="w-1/4 h-auto max-h-[500px] object-contain transform -rotate-3"
           />
-          <img
-            src="/src/assets/img/challenges/001/summer.png"
+          <Image
+            src={summer}
             alt="Summer"
             class="w-1/4 h-auto max-h-[500px] object-contain transform rotate-3"
           />
-          <img
-            src="/src/assets/img/challenges/001/fall.png"
+          <Image
+            src={fall}
             alt="Fall"
             class="w-1/4 h-auto max-h-[500px] object-contain transform -rotate-3"
           />
-          <img
-            src="/src/assets/img/challenges/001/winter.png"
+          <Image
+            src={winter}
             alt="Winter"
             class="w-1/4 h-auto max-h-[500px] object-contain transform rotate-3"
           />
@@ -219,8 +226,8 @@ import Layout from "../../layouts/Layout.astro";
         <div
           class="flex justify-center md:justify-start lg:justify-center md:items-start"
         >
-          <img
-            src="/src/assets/img/challenges/001/birds.png"
+          <Image
+            src={birds}
             alt="Decorative bird illustration"
             class="w-full max-w-md h-auto object-contain"
           />
@@ -558,8 +565,8 @@ import Layout from "../../layouts/Layout.astro";
         <div
           class="flex justify-center lg:justify-start xl:justify-center lg:items-start"
         >
-          <img
-            src="/src/assets/img/challenges/001/studio-hours.png"
+          <Image
+            src={studioHours}
             alt="Studio Hours illustration"
             class="w-full max-w-md h-auto object-contain"
           />
