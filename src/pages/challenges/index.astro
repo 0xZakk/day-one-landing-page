@@ -1,0 +1,82 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout>
+  <!-- Hero Section -->
+  <section class="relative flex items-end h-[50vh] bg-[#3D4A3A]">
+    <div class="container mx-auto px-8 pb-16 text-left">
+      <h1 class="text-5xl md:text-6xl font-bold mb-4 text-white font-departure">
+        Challenges
+      </h1>
+    </div>
+  </section>
+
+  <!-- Challenges Grid Section -->
+  <section class="py-16">
+    <div class="container mx-auto px-8">
+      <h2
+        class="text-3xl md:text-4xl font-bold mb-8 text-[#1C1C1C] dark:text-[#E5E5E5] font-departure"
+      >
+        Recent Challenges
+      </h2>
+      <p class="text-lg mb-12 max-w-3xl text-[#1C1C1C] dark:text-[#E5E5E5]">
+        We run a new challenge every week. These are an opportunity to explore
+        different use cases and capabilities of AI tools. It's all about how
+        much leverage one person can get.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <a
+          href="/challenges/001-parks-and-rec"
+          class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+        >
+          <div class="h-40 bg-[#E9EDE8] dark:bg-[#2D362B] rounded-md flex items-center justify-center mb-6">
+            <i
+              data-lucide="tree-pine"
+              class="text-[#D4A73A] w-10 h-10"
+            ></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-[#1C1C1C] dark:text-[#E5E5E5] font-departure">
+            Parks and Rec Challenge
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300 mb-2">
+            Use AI to build a visually compelling directory of the parks in your hometown
+          </p>
+          <div class="mt-4 flex justify-end">
+            <span class="text-[#D4A73A] dark:text-[#D4A73A]">→</span>
+          </div>
+        </a>
+
+        <div
+          class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+        >
+          <div class="h-40 bg-[#E9EDE8] dark:bg-[#2D362B] rounded-md flex items-center justify-center mb-6">
+            <i
+              data-lucide="hourglass"
+              class="text-[#D4A73A] w-10 h-10"
+            ></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-[#1C1C1C] dark:text-[#E5E5E5] font-departure">
+            More coming soon
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300 mb-2">
+            Stay tuned for our next challenge!
+          </p>
+          <div class="mt-4 flex justify-end">
+            <span class="text-[#D4A73A] dark:text-[#D4A73A]">→</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // Make sure Lucide icons are initialized
+  document.addEventListener("DOMContentLoaded", function () {
+    if (typeof window.lucide !== "undefined") {
+      window.lucide.createIcons();
+    }
+  });
+</script>
