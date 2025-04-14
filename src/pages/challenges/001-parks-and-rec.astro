@@ -1,0 +1,672 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout>
+  <!-- Hero Section -->
+  <section
+    id="hero"
+    class="relative flex items-end justify-start h-screen bg-[#3D4A3A] h-[55vh]"
+  >
+    <div class="container mx-auto px-8 pb-8 text-left">
+      <h2 class="text-white text-lg font-bold mb-2">
+        <a href="/challenges" class="font-departure">Challenge</a> / 001
+      </h2>
+      <h1 class="text-5xl md:text-6xl font-bold mb-8 text-white font-departure">
+        Parks and Rec
+      </h1>
+      <p class="text-white text-lg mb-4">
+        Use AI to build a visually compelling directory of the parks in your
+        hometown
+      </p>
+    </div>
+  </section>
+
+  <!-- Challenge Summary Section -->
+  <section id="summary" class="py-16 bg-gray-50 dark:bg-gray-800">
+    <div class="container mx-auto px-8">
+      <h2
+        class="text-3xl md:text-4xl font-bold mb-8 text-[#1C1C1C] dark:text-[#E5E5E5] font-departure"
+      >
+        Challenge Summary
+      </h2>
+      <p class="text-lg mb-4 text-[#1C1C1C] dark:text-[#E5E5E5]">
+        The Parks and Rec Hackathon is a week-long creative sprint to build a
+        new digital homepage for the parks in your hometown while leveraging AI
+        to do it.
+      </p>
+      <p class="text-lg mb-4 text-[#1C1C1C] dark:text-[#E5E5E5]">
+        This isn't a technical competition. It's a creative one. You can build a
+        map, a zine, a chatbot, a dreamy single-page site, or something that
+        doesn't even look like a directory at all. The challenge on the table is
+        to take a somewhat narrow scope and see how far you can push it
+        creatively. There aren't many specific requirements, so use this to
+        shine a light on the parks that make your city feel alive.
+      </p>
+      <p class="text-lg mb-4 text-[#1C1C1C] dark:text-[#E5E5E5]">
+        Our goal with this challenge is to give you space to explore,
+        experiment, and share your vision. Use the tools that excite you. Follow
+        the threads that inspire you. Make something you're proud of — and
+        surprise yourself along the way.
+      </p>
+
+      <!-- Seasonal Images Gallery -->
+      <div class="mt-12">
+        <!-- Mobile Carousel (default) -->
+        <div
+          class="block md:hidden relative w-full overflow-x-auto snap-x snap-mandatory"
+        >
+          <div class="flex w-full gap-4 px-4">
+            <div class="w-full flex-shrink-0 snap-center">
+              <img
+                src="/src/assets/img/challenges/001/spring.png"
+                alt="Spring"
+                class="w-full h-auto object-contain"
+              />
+            </div>
+            <div class="w-full flex-shrink-0 snap-center">
+              <img
+                src="/src/assets/img/challenges/001/summer.png"
+                alt="Summer"
+                class="w-full h-auto object-contain"
+              />
+            </div>
+            <div class="w-full flex-shrink-0 snap-center">
+              <img
+                src="/src/assets/img/challenges/001/fall.png"
+                alt="Fall"
+                class="w-full h-auto object-contain"
+              />
+            </div>
+            <div class="w-full flex-shrink-0 snap-center">
+              <img
+                src="/src/assets/img/challenges/001/winter.png"
+                alt="Winter"
+                class="w-full h-auto object-contain"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Medium Screen Grid (2x2) -->
+        <div class="hidden md:grid lg:hidden grid-cols-2 gap-4">
+          <img
+            src="/src/assets/img/challenges/001/spring.png"
+            alt="Spring"
+            class="w-full h-auto object-contain"
+          />
+          <img
+            src="/src/assets/img/challenges/001/summer.png"
+            alt="Summer"
+            class="w-full h-auto object-contain"
+          />
+          <img
+            src="/src/assets/img/challenges/001/fall.png"
+            alt="Fall"
+            class="w-full h-auto object-contain"
+          />
+          <img
+            src="/src/assets/img/challenges/001/winter.png"
+            alt="Winter"
+            class="w-full h-auto object-contain"
+          />
+        </div>
+
+        <!-- Large Screen Row with Tilted Images -->
+        <div class="hidden lg:flex justify-between items-center gap-4">
+          <img
+            src="/src/assets/img/challenges/001/spring.png"
+            alt="Spring"
+            class="w-1/4 h-auto max-h-[500px] object-contain transform -rotate-3"
+          />
+          <img
+            src="/src/assets/img/challenges/001/summer.png"
+            alt="Summer"
+            class="w-1/4 h-auto max-h-[500px] object-contain transform rotate-3"
+          />
+          <img
+            src="/src/assets/img/challenges/001/fall.png"
+            alt="Fall"
+            class="w-1/4 h-auto max-h-[500px] object-contain transform -rotate-3"
+          />
+          <img
+            src="/src/assets/img/challenges/001/winter.png"
+            alt="Winter"
+            class="w-1/4 h-auto max-h-[500px] object-contain transform rotate-3"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inspiration Section -->
+  <section id="inspiration" class="py-16">
+    <div class="container mx-auto px-8">
+      <h2
+        class="text-3xl md:text-4xl font-bold mb-8 text-[#1C1C1C] dark:text-[#E5E5E5] font-departure"
+      >
+        Inspiration
+      </h2>
+
+      <p class="text-lg mb-8 text-[#1C1C1C] dark:text-[#E5E5E5]">
+        There's no right way to do this. Your "directory" could be functional,
+        expressive, absurd, or all of the above. Below are some ideas to spark
+        your thinking — but feel free to ignore them completely and make
+        something that only you could make.
+      </p>
+
+      <h3 class="text-xl font-bold mb-4 text-[#1C1C1C] dark:text-[#E5E5E5]">
+        You might build…
+      </h3>
+
+      <div class="md:grid md:grid-cols-2 md:gap-8 mb-12">
+        <ul
+          class="space-y-3 mb-8 md:mb-0 text-lg text-[#1C1C1C] dark:text-[#E5E5E5]"
+        >
+          <li class="flex items-start">
+            <span class="text-[#D4A73A] dark:text-[#D4A73A] mr-2">›</span>
+            <span
+              >A minimalist web app that lists your city's parks with
+              AI-generated photography</span
+            >
+          </li>
+          <li class="flex items-start">
+            <span class="text-[#D4A73A] dark:text-[#D4A73A] mr-2">›</span>
+            <span
+              >A vintage 90s-style site with pixel art and fake park reviews</span
+            >
+          </li>
+          <li class="flex items-start">
+            <span class="text-[#D4A73A] dark:text-[#D4A73A] mr-2">›</span>
+            <span>A chatbot that speaks like a poetic park ranger</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-[#D4A73A] dark:text-[#D4A73A] mr-2">›</span>
+            <span
+              >A mobile app with park trail maps, a "catch 'em all" feature for
+              local plants and wildlife, and an AI park ranger to guide you on a
+              narrated walk</span
+            >
+          </li>
+          <li class="flex items-start">
+            <span class="text-[#D4A73A] dark:text-[#D4A73A] mr-2">›</span>
+            <span
+              >A dreamy photo zine with DALL·E images and short, AI-generated
+              haikus</span
+            >
+          </li>
+          <li class="flex items-start">
+            <span class="text-[#D4A73A] dark:text-[#D4A73A] mr-2">›</span>
+            <span>A 3D map with custom icons and ambient soundscapes</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-[#D4A73A] dark:text-[#D4A73A] mr-2">›</span>
+            <span
+              >A searchable directory of local parks by mood ("quiet," "sunny,"
+              "best for dog naps")</span
+            >
+          </li>
+          <li class="flex items-start">
+            <span class="text-[#D4A73A] dark:text-[#D4A73A] mr-2">›</span>
+            <span
+              >A print-on-demand coffee table book of the most beautiful parks
+              you've never heard of</span
+            >
+          </li>
+        </ul>
+
+        <div
+          class="flex justify-center md:justify-start lg:justify-center md:items-start"
+        >
+          <img
+            src="/src/assets/img/challenges/001/birds.png"
+            alt="Decorative bird illustration"
+            class="w-full max-w-md h-auto object-contain"
+          />
+        </div>
+      </div>
+
+      <p class="text-lg text-[#1C1C1C] dark:text-[#E5E5E5]">
+        If you're using AI for visuals, try Midjourney, DALL·E, Runway, or
+        custom-trained models. For websites and apps, tools like Vercel,
+        Supabase, and GPT-4 can get you far. But we're tool-agnostic — whatever
+        helps bring your idea to life is fair game.
+      </p>
+    </div>
+  </section>
+
+  <!-- Guidelines Section -->
+  <section id="guidelines" class="py-16 bg-gray-50 dark:bg-gray-800">
+    <div class="container mx-auto px-8">
+      <h2
+        class="text-3xl md:text-4xl font-bold mb-8 text-[#1C1C1C] dark:text-[#E5E5E5] font-departure"
+      >
+        Guidelines
+      </h2>
+
+      <p class="text-lg mb-8 text-[#1C1C1C] dark:text-[#E5E5E5]">
+        This hackathon is intentionally loose — but a little structure helps.
+        Here's what you need to know:
+      </p>
+
+      <ul
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 text-lg text-[#1C1C1C] dark:text-[#E5E5E5]"
+      >
+        <li class="flex items-start">
+          <span class="text-[#D4A73A] dark:text-[#D4A73A] mr-2">›</span>
+          <span
+            ><span class="font-bold">Solo or teams:</span> You can work alone or
+            with up to 3 others.</span
+          >
+        </li>
+        <li class="flex items-start">
+          <span class="text-[#D4A73A] dark:text-[#D4A73A] mr-2">›</span>
+          <span
+            ><span class="font-bold">Use AI:</span> Your project should incorporate
+            AI in some meaningful way — for visuals, code, text, interaction, or
+            something else.</span
+          >
+        </li>
+        <li class="flex items-start">
+          <span class="text-[#D4A73A] dark:text-[#D4A73A] mr-2">›</span>
+          <span
+            ><span class="font-bold">Make it local:</span> Focus on parks from your
+            hometown, current city, or anywhere you feel a personal connection to.
+            Interpret "park" as loosely as you like.</span
+          >
+        </li>
+        <li class="flex items-start">
+          <span class="text-[#D4A73A] dark:text-[#D4A73A] mr-2">›</span>
+          <span
+            ><span class="font-bold">Publish it:</span> Host your project somewhere
+            shareable — a website, a repo, a PDF zine, whatever works.</span
+          >
+        </li>
+        <li class="flex items-start">
+          <span class="text-[#D4A73A] dark:text-[#D4A73A] mr-2">›</span>
+          <span
+            ><span class="font-bold">Tell us about it:</span> Submissions include
+            a link and a short write-up: what you made, what tools you used, and
+            why you're proud of it.</span
+          >
+        </li>
+        <li class="flex items-start">
+          <span class="text-[#D4A73A] dark:text-[#D4A73A] mr-2">›</span>
+          <span
+            ><span class="font-bold">Be good to each other:</span> This is a creative
+            space. Be generous with your ideas, kind with your feedback, and supportive
+            of the weird and wonderful.</span
+          >
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Schedule Section -->
+  <section id="schedule" class="py-16">
+    <div class="container mx-auto px-8">
+      <h2
+        class="text-3xl md:text-4xl font-bold mb-8 text-[#1C1C1C] dark:text-[#E5E5E5] font-departure"
+      >
+        Schedule
+      </h2>
+
+      <p class="text-lg mb-8 text-[#1C1C1C] dark:text-[#E5E5E5]">
+        The hackathon runs for one week, with optional live sessions along the
+        way. Here's how it breaks down:
+      </p>
+
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 max-w-[1600px] mx-auto"
+      >
+        <div
+          class="bg-white dark:bg-gray-700 rounded-lg p-6 border-l-4 border-[#4A6FA5] shadow-sm transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
+        >
+          <h3 class="text-xl font-bold mb-2 text-[#1C1C1C] dark:text-[#E5E5E5]">
+            Kickoff Call
+          </h3>
+          <p class="text-lg mb-4 text-[#1C1C1C] dark:text-[#E5E5E5]">
+            We'll start with a short kickoff call to walk through the challenge,
+            share ideas, and get inspired.
+          </p>
+          <div class="flex items-center text-[#5F6368] dark:text-[#9AA0A6]">
+            <svg
+              class="w-5 h-5 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <p class="text-lg">
+              <span class="font-medium">Monday, April 14 at 1:00 PM CT</span><br
+              />
+              <span class="text-sm">(2:00 PM ET / 11:00 AM PT)</span>
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="bg-white dark:bg-gray-700 rounded-lg p-6 border-l-4 border-[#3D4A3A] shadow-sm transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
+        >
+          <h3 class="text-xl font-bold mb-2 text-[#1C1C1C] dark:text-[#E5E5E5]">
+            Hackathon Begins
+          </h3>
+          <p class="text-lg mb-4 text-[#1C1C1C] dark:text-[#E5E5E5]">
+            Start building. Share early ideas, sketches, and prototypes in
+            Discord.
+          </p>
+          <div class="flex items-center text-[#5F6368] dark:text-[#9AA0A6]">
+            <svg
+              class="w-5 h-5 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <p class="text-lg">
+              <span class="font-medium"
+                >Right after the kickoff call on April 14</span
+              >
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="bg-white dark:bg-gray-700 rounded-lg p-6 border-l-4 border-[#E2B93B] shadow-sm transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
+        >
+          <h3 class="text-xl font-bold mb-2 text-[#1C1C1C] dark:text-[#E5E5E5]">
+            Studio Hours
+          </h3>
+          <p class="text-lg mb-4 text-[#1C1C1C] dark:text-[#E5E5E5]">
+            Optional live session for feedback and jamming on ideas.
+          </p>
+          <div class="flex items-center text-[#5F6368] dark:text-[#9AA0A6]">
+            <svg
+              class="w-5 h-5 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <p class="text-lg">
+              <span class="font-medium">Tuesday, April 15 at 11:00 AM CT</span
+              ><br />
+              <span class="text-sm">(12:00 PM ET / 9:00 AM PT)</span>
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="bg-white dark:bg-gray-700 rounded-lg p-6 border-l-4 border-[#E2B93B] shadow-sm transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
+        >
+          <h3 class="text-xl font-bold mb-2 text-[#1C1C1C] dark:text-[#E5E5E5]">
+            Studio Hours
+          </h3>
+          <p class="text-lg mb-4 text-[#1C1C1C] dark:text-[#E5E5E5]">
+            Optional live session for feedback and jamming on ideas.
+          </p>
+          <div class="flex items-center text-[#5F6368] dark:text-[#9AA0A6]">
+            <svg
+              class="w-5 h-5 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <p class="text-lg">
+              <span class="font-medium">Wednesday, April 16 at 2:00 PM CT</span
+              ><br />
+              <span class="text-sm">(3:00 PM ET / 12:00 PM PT)</span>
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="bg-white dark:bg-gray-700 rounded-lg p-6 border-l-4 border-[#C94C4C] shadow-sm transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
+        >
+          <h3 class="text-xl font-bold mb-2 text-[#1C1C1C] dark:text-[#E5E5E5]">
+            Submissions Due
+          </h3>
+          <p class="text-lg mb-4 text-[#1C1C1C] dark:text-[#E5E5E5]">
+            Share a link to your project and a short write-up. A submission form
+            will be shared near the end of the hackathon.
+          </p>
+          <div class="flex items-center text-[#5F6368] dark:text-[#9AA0A6]">
+            <svg
+              class="w-5 h-5 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <p class="text-lg">
+              <span class="font-medium">Sunday, April 20 at 2:00 PM CT</span><br
+              />
+              <span class="text-sm">(3:00 PM ET / 12:00 PM PT)</span>
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="bg-white dark:bg-gray-700 rounded-lg p-6 border-l-4 border-[#4A6FA5] shadow-sm transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
+        >
+          <h3 class="text-xl font-bold mb-2 text-[#1C1C1C] dark:text-[#E5E5E5]">
+            Showcase & Wrap-Up
+          </h3>
+          <p class="text-lg mb-4 text-[#1C1C1C] dark:text-[#E5E5E5]">
+            We'll give everyone a chance to show off what they built and
+            announce the final awards.
+          </p>
+          <div class="flex items-center text-[#5F6368] dark:text-[#9AA0A6]">
+            <svg
+              class="w-5 h-5 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <p class="text-lg">
+              <span class="font-medium">Monday, April 21 at 11:00 AM CT</span
+              ><br />
+              <span class="text-sm">(12:00 PM ET / 9:00 AM PT)</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Studio Hours Section -->
+  <section id="studio" class="py-16 bg-gray-50 dark:bg-gray-800">
+    <div class="container mx-auto px-8">
+      <h2
+        class="text-3xl md:text-4xl font-bold mb-8 text-[#1C1C1C] dark:text-[#E5E5E5] font-departure"
+      >
+        Studio Hours
+      </h2>
+
+      <p class="text-lg mb-8 text-[#1C1C1C] dark:text-[#E5E5E5]">
+        Think of it like putting your project up on the wall: you'll get
+        reactions, suggestions, and maybe even a new idea or direction you
+        hadn't considered. You're welcome to come with something polished or
+        totally in-progress.
+      </p>
+
+      <div class="lg:grid lg:grid-cols-2 lg:gap-8 mb-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4 text-[#1C1C1C] dark:text-[#E5E5E5]">
+            This week's Studio Hours:
+          </h3>
+
+          <ul
+            class="space-y-3 mb-8 lg:mb-0 text-lg text-[#1C1C1C] dark:text-[#E5E5E5]"
+          >
+            <li class="flex items-start">
+              <span class="text-[#D4A73A] dark:text-[#D4A73A] mr-2">›</span>
+              <span>
+                <span class="font-bold">Tuesday, April 15 at 11:00 AM CT</span
+                ><br />
+                <span class="text-[#1C1C1C] dark:text-[#E5E5E5] opacity-80"
+                  >(12:00 PM ET / 9:00 AM PT)</span
+                >
+              </span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-[#D4A73A] dark:text-[#D4A73A] mr-2">›</span>
+              <span>
+                <span class="font-bold">Wednesday, April 16 at 2:00 PM CT</span
+                ><br />
+                <span class="text-[#1C1C1C] dark:text-[#E5E5E5] opacity-80"
+                  >(3:00 PM ET / 12:00 PM PT)</span
+                >
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <div
+          class="flex justify-center lg:justify-start xl:justify-center lg:items-start"
+        >
+          <img
+            src="/src/assets/img/challenges/001/studio-hours.png"
+            alt="Studio Hours illustration"
+            class="w-full max-w-md h-auto object-contain"
+          />
+        </div>
+      </div>
+
+      <p class="text-lg text-[#1C1C1C] dark:text-[#E5E5E5]">
+        Links will be shared in Discord before each session. You don't need to
+        prepare anything formal — just bring what you've got and be ready to see
+        what others are building too.
+      </p>
+    </div>
+  </section>
+
+  <!-- Prizes and Recognition Section -->
+  <section id="prizes" class="py-16">
+    <div class="container mx-auto px-8">
+      <h2
+        class="text-3xl md:text-4xl font-bold mb-8 text-[#1C1C1C] dark:text-[#E5E5E5] font-departure"
+      >
+        Prizes and Recognition
+      </h2>
+
+      <p class="text-lg mb-6 text-[#1C1C1C] dark:text-[#E5E5E5]">
+        While this isn't a traditional competition, we still want to celebrate
+        great work.
+      </p>
+
+      <p class="text-lg mb-8 text-[#1C1C1C] dark:text-[#E5E5E5]">
+        At the end of the week, we'll highlight a few standout projects during
+        the Showcase. Recognition is based on creativity, execution, and that
+        unnameable spark that makes something memorable. Think of these as
+        community shoutouts.
+      </p>
+
+      <h3 class="text-xl font-bold mb-4 text-[#1C1C1C] dark:text-[#E5E5E5]">
+        We'll be recognizing projects these categories:
+      </h3>
+
+      <ul class="space-y-3 mb-8 text-lg text-[#1C1C1C] dark:text-[#E5E5E5]">
+        <li class="flex items-start">
+          <span class="text-[#D4A73A] dark:text-[#D4A73A] mr-2">›</span>
+          <span
+            ><span class="font-bold">Best Overall</span> – the project that nails
+            concept, execution, and style</span
+          >
+        </li>
+        <li class="flex items-start">
+          <span class="text-[#D4A73A] dark:text-[#D4A73A] mr-2">›</span>
+          <span
+            ><span class="font-bold">Most Visually Compelling</span> – beautiful,
+            strange, or delightfully designed</span
+          >
+        </li>
+        <li class="flex items-start">
+          <span class="text-[#D4A73A] dark:text-[#D4A73A] mr-2">›</span>
+          <span
+            ><span class="font-bold">Most Technically Inventive</span> – clever use
+            of tools, code, or architecture</span
+          >
+        </li>
+        <li class="flex items-start">
+          <span class="text-[#D4A73A] dark:text-[#D4A73A] mr-2">›</span>
+          <span
+            ><span class="font-bold">Best Use of Local Flavor</span> – a project
+            that really captures the spirit of its city and parks</span
+          >
+        </li>
+        <li class="flex items-start">
+          <span class="text-[#D4A73A] dark:text-[#D4A73A] mr-2">›</span>
+          <span
+            ><span class="font-bold">"Didn't See That Coming"</span> – the most unexpected,
+            unclassifiable submission</span
+          >
+        </li>
+      </ul>
+
+      <p class="text-lg text-[#1C1C1C] dark:text-[#E5E5E5]">
+        There may also be some surprise goodies — digital or otherwise.
+      </p>
+    </div>
+  </section>
+
+  <!-- Best of Luck Section -->
+  <section id="closing" class="py-16 bg-gray-50 dark:bg-gray-800">
+    <div class="container mx-auto px-8 text-center">
+      <h2
+        class="text-3xl md:text-4xl font-bold mb-8 text-[#1C1C1C] dark:text-[#E5E5E5] font-departure"
+      >
+        Best of Luck
+      </h2>
+
+      <p
+        class="text-lg mb-6 text-[#1C1C1C] dark:text-[#E5E5E5] max-w-3xl mx-auto"
+      >
+        Look out for more updates in Discord.
+      </p>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Hide scrollbar for the carousel while maintaining functionality */
+  .snap-x::-webkit-scrollbar {
+    display: none;
+  }
+  .snap-x {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
