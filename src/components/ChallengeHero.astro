@@ -13,8 +13,8 @@ const { id, title, description } = Astro.props;
   class="relative flex items-end justify-start bg-[#3D4A3A] h-[55vh]"
 >
   <div class="container mx-auto px-8 pb-8 text-left">
-    <h2 class="text-white text-lg font-bold mb-2">
-      Challenge / {id}
+    <h2 class="text-white text-lg font-bold mb-2 font-departure">
+      <a href="/challenges" class="hover:underline font-departure">Challenge</a> / {id}
     </h2>
     <h1 class="text-5xl md:text-6xl font-bold mb-8 text-white font-departure">
       {title}
@@ -23,4 +23,5 @@ const { id, title, description } = Astro.props;
       {description}
     </p>
   </div>
-</section> 
+</section>
+

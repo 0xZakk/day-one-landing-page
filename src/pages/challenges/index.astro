@@ -4,8 +4,6 @@ import ChallengeCard from "../../components/ChallengeCard.astro";
 
 import { getCollection } from "astro:content";
 const challenges = await getCollection("challenges");
-
-console.log(challenges);
 ---
 
 <Layout>
@@ -33,18 +31,6 @@ console.log(challenges);
       </p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {
-          [...challenges].reverse().map((challenge) => (
-            <ChallengeCard
-              id={challenge.data.id}
-              title={challenge.data.title}
-              summary={challenge.data.summary}
-              slug={challenge.slug}
-              icon={challenge.data.icon}
-            />
-          ))
-        }
-
         <div
           class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
         >
@@ -65,6 +51,20 @@ console.log(challenges);
             <span class="text-[#D4A73A] dark:text-[#D4A73A]">→</span>
           </div>
         </div>
+        
+        {
+          [...challenges]
+            .reverse()
+            .map((challenge) => (
+              <ChallengeCard
+                id={challenge.data.id}
+                title={challenge.data.title}
+                summary={challenge.data.summary}
+                slug={challenge.slug}
+                icon={challenge.data.icon}
+              />
+            ))
+        }
       </div>
     </div>
   </section>
@@ -77,4 +77,5 @@ console.log(challenges);
       window.lucide.createIcons();
     }
   });
-</script> 
+</script>
+

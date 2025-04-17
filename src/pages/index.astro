@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import NewsletterSignup from "../components/NewsletterSignup.astro";
+import ChallengeCard from "../components/ChallengeCard.astro";
 ---
 
 <Layout>
@@ -149,41 +150,30 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
   <!-- Newsletter Signup Section -->
   <NewsletterSignup />
 
-  <!-- Latest Experiments Section -->
-  <section id="latest-experiments" class="py-16 bg-gray-50 dark:bg-gray-800">
+  <!-- Latest Challenges Section -->
+  <section id="latest-challenges" class="py-16 bg-gray-50 dark:bg-gray-800">
     <div class="container mx-auto px-8">
       <h2
         class="text-3xl md:text-4xl font-bold mb-6 text-[#1C1C1C] dark:text-[#E5E5E5] font-departure"
       >
-        Latest Experiments
+        Latest Challenges
       </h2>
       <p class="text-lg mb-12 max-w-3xl text-[#1C1C1C] dark:text-[#E5E5E5]">
         Every week, we try something new with AI.<br />
-        These are our favorite experiments, tools, and builds this month:
+        These are our favorite challenges, tools, and builds this month:
       </p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Experiment Card 1 -->
-        <a 
-          href="/challenges/001-parks-and-rec"
-          class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
-        >
-          <div
-            class="h-40 bg-[#E9EDE8] dark:bg-[#2D362B] rounded-md flex items-center justify-center mb-6"
-          >
-            <i data-lucide="tree-pine" class="text-[#D4A73A] w-10 h-10"></i>
-          </div>
-          <h3
-            class="text-xl font-semibold mb-3 text-[#1C1C1C] dark:text-[#E5E5E5] font-departure"
-          >
-            Parks and Rec Challenge
-          </h3>
-          <div class="mt-4 flex justify-end">
-            <span class="text-[#D4A73A] dark:text-[#D4A73A]">→</span>
-          </div>
-        </a>
+        <!-- Challenge Card 1 -->
+        <ChallengeCard
+          title="Parks and Rec"
+          summary="Build something cool with parks and recreation data"
+          slug="001-parks-and-rec"
+          icon="tree-pine"
+          id="001"
+        />
 
-        <!-- Experiment Card 2 -->
+        <!-- Challenge Card 2 -->
         <div
           class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
         >
