@@ -1,5 +1,11 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import ChallengeCard from "../../components/ChallengeCard.astro";
+
+import { getCollection } from "astro:content";
+const challenges = await getCollection("challenges");
+
+console.log(challenges);
 ---
 
 <Layout>
@@ -27,37 +33,29 @@ import Layout from "../../layouts/Layout.astro";
       </p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <a
-          href="/challenges/001-parks-and-rec"
-          class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
-        >
-          <div class="h-40 bg-[#E9EDE8] dark:bg-[#2D362B] rounded-md flex items-center justify-center mb-6">
-            <i
-              data-lucide="tree-pine"
-              class="text-[#D4A73A] w-10 h-10"
-            ></i>
-          </div>
-          <h3 class="text-xl font-semibold mb-3 text-[#1C1C1C] dark:text-[#E5E5E5] font-departure">
-            Parks and Rec Challenge
-          </h3>
-          <p class="text-sm text-gray-600 dark:text-gray-300 mb-2">
-            Use AI to build a visually compelling directory of the parks in your hometown
-          </p>
-          <div class="mt-4 flex justify-end">
-            <span class="text-[#D4A73A] dark:text-[#D4A73A]">→</span>
-          </div>
-        </a>
+        {
+          [...challenges].reverse().map((challenge) => (
+            <ChallengeCard
+              id={challenge.data.id}
+              title={challenge.data.title}
+              summary={challenge.data.summary}
+              slug={challenge.slug}
+              icon={challenge.data.icon}
+            />
+          ))
+        }
 
         <div
           class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
         >
-          <div class="h-40 bg-[#E9EDE8] dark:bg-[#2D362B] rounded-md flex items-center justify-center mb-6">
-            <i
-              data-lucide="hourglass"
-              class="text-[#D4A73A] w-10 h-10"
-            ></i>
+          <div
+            class="h-40 bg-[#E9EDE8] dark:bg-[#2D362B] rounded-md flex items-center justify-center mb-6"
+          >
+            <i data-lucide="hourglass" class="text-[#D4A73A] w-10 h-10"></i>
           </div>
-          <h3 class="text-xl font-semibold mb-3 text-[#1C1C1C] dark:text-[#E5E5E5] font-departure">
+          <h3
+            class="text-xl font-semibold mb-3 text-[#1C1C1C] dark:text-[#E5E5E5] font-departure"
+          >
             More coming soon
           </h3>
           <p class="text-sm text-gray-600 dark:text-gray-300 mb-2">
@@ -79,4 +77,4 @@ import Layout from "../../layouts/Layout.astro";
       window.lucide.createIcons();
     }
   });
-</script>
+</script> 

@@ -9,7 +9,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.6.1"
+    "@astrojs/markdown-remark": "^6.3.1",
+    "@astrojs/mdx": "^4.2.4",
+    "astro": "^5.6.1",
+    "remark-autolink-headings": "^7.0.1",
+    "remark-slug": "^7.0.1"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^6.0.2",

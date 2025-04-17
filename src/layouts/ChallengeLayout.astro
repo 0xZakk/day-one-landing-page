@@ -1,0 +1,315 @@
+---
+import Layout from "./Layout.astro";
+import ChallengeHero from "../components/ChallengeHero.astro";
+import { Image } from "astro:assets";
+import studioHours from "../assets/img/challenges/001/studio-hours.png";
+
+const borderColors = [
+  "border-[#4A6FA5]", // blue
+  "border-[#3D4A3A]", // green
+  "border-[#E2B93B]", // yellow
+  "border-[#C94C4C]"  // red
+];
+
+const getBorderColor = (index: number) => {
+  return borderColors[index % borderColors.length];
+};
+
+interface Props {
+  id: string;
+  title: string;
+  description: string;
+  schedule: {
+    title: string;
+    date: string;
+    time: string;
+    timezone: string;
+    timezones?: {
+      ET?: string;
+      PT?: string;
+    };
+    description: string;
+  }[];
+  awards: {
+    title: string;
+    description: string;
+  }[];
+}
+
+const { id, title, description, schedule, awards } = Astro.props;
+---
+
+<Layout>
+  <!-- Challenge Hero -->
+  <ChallengeHero id={id} title={title} description={description} />
+
+  <!-- Challenge Content -->
+  <slot />
+
+  <!-- Guidelines Section -->
+  <section id="guidelines" class="py-16 bg-gray-50 dark:bg-gray-800">
+    <div class="container mx-auto px-8">
+      <h2
+        class="text-3xl md:text-4xl font-bold mb-8 text-[#1C1C1C] dark:text-[#E5E5E5] font-departure"
+      >
+        Guidelines
+      </h2>
+
+      <p class="text-lg mb-8 text-[#1C1C1C] dark:text-[#E5E5E5]">
+        This hackathon is intentionally loose — but a little structure helps.
+        Here's what you need to know:
+      </p>
+
+      <ul
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 text-lg text-[#1C1C1C] dark:text-[#E5E5E5]"
+      >
+        <li class="flex items-start">
+          <span class="text-[#D4A73A] dark:text-[#D4A73A] mr-2">›</span>
+          <span
+            ><span class="font-bold">Solo or teams:</span> You can work alone or
+            with up to 3 others.</span
+          >
+        </li>
+        <li class="flex items-start">
+          <span class="text-[#D4A73A] dark:text-[#D4A73A] mr-2">›</span>
+          <span
+            ><span class="font-bold">Use AI:</span> Your project should incorporate
+            AI in some meaningful way — for visuals, code, text, interaction, or
+            something else.</span
+          >
+        </li>
+        <li class="flex items-start">
+          <span class="text-[#D4A73A] dark:text-[#D4A73A] mr-2">›</span>
+          <span
+            ><span class="font-bold">Make it local:</span> Focus on parks from your
+            hometown, current city, or anywhere you feel a personal connection to.
+            Interpret "park" as loosely as you like.</span
+          >
+        </li>
+        <li class="flex items-start">
+          <span class="text-[#D4A73A] dark:text-[#D4A73A] mr-2">›</span>
+          <span
+            ><span class="font-bold">Publish it:</span> Host your project somewhere
+            shareable — a website, a repo, a PDF zine, whatever works.</span
+          >
+        </li>
+        <li class="flex items-start">
+          <span class="text-[#D4A73A] dark:text-[#D4A73A] mr-2">›</span>
+          <span
+            ><span class="font-bold">Tell us about it:</span> Submissions include
+            a link and a short write-up: what you made, what tools you used, and
+            why you're proud of it.</span
+          >
+        </li>
+        <li class="flex items-start">
+          <span class="text-[#D4A73A] dark:text-[#D4A73A] mr-2">›</span>
+          <span
+            ><span class="font-bold">Be good to each other:</span> This is a creative
+            space. Be generous with your ideas, kind with your feedback, and supportive
+            of the weird and wonderful.</span
+          >
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Schedule Section -->
+  <section id="schedule" class="py-16">
+    <div class="container mx-auto px-8">
+      <h2
+        class="text-3xl md:text-4xl font-bold mb-8 text-[#1C1C1C] dark:text-[#E5E5E5] font-departure"
+      >
+        Schedule
+      </h2>
+
+      <p class="text-lg mb-8 text-[#1C1C1C] dark:text-[#E5E5E5]">
+        The hackathon runs for one week, with optional live sessions along the
+        way. Here's how it breaks down:
+      </p>
+
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 max-w-[1600px] mx-auto"
+      >
+        {
+          schedule.map((event, index) => (
+            <div
+              class={`bg-white dark:bg-gray-700 rounded-lg p-6 border-l-4 ${getBorderColor(index)} shadow-sm transition-all duration-200 hover:shadow-md hover:-translate-y-0.5`}
+            >
+              <h3 class="text-xl font-bold mb-2 text-[#1C1C1C] dark:text-[#E5E5E5]">
+                {event.title}
+              </h3>
+              <p class="text-lg mb-4 text-[#1C1C1C] dark:text-[#E5E5E5]">
+                {event.description}
+              </p>
+              <div class="flex items-center text-[#5F6368] dark:text-[#9AA0A6]">
+                <svg
+                  class="w-5 h-5 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <p class="text-lg">
+                  <span class="font-medium">
+                    {new Date(event.date).toLocaleDateString('en-US', { weekday: 'long' })}, {event.date} at {event.time} {event.timezone}
+                  </span>
+                  {event.timezones && (
+                    <br />
+                    <span class="text-sm">
+                      ({event.timezones.ET && `${event.timezones.ET} ET`}
+                      {event.timezones.ET && event.timezones.PT && " / "}
+                      {event.timezones.PT && `${event.timezones.PT} PT`})
+                    </span>
+                  )}
+                </p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Studio Hours Section -->
+  <section id="studio" class="py-16 bg-gray-50 dark:bg-gray-800">
+    <div class="container mx-auto px-8">
+      <h2
+        class="text-3xl md:text-4xl font-bold mb-8 text-[#1C1C1C] dark:text-[#E5E5E5] font-departure"
+      >
+        Studio Hours
+      </h2>
+
+      <p class="text-lg mb-8 text-[#1C1C1C] dark:text-[#E5E5E5]">
+        Think of it like putting your project up on the wall: you'll get
+        reactions, suggestions, and maybe even a new idea or direction you
+        hadn't considered. You're welcome to come with something polished or
+        totally in-progress.
+      </p>
+
+      <div class="lg:grid lg:grid-cols-2 lg:gap-8 mb-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4 text-[#1C1C1C] dark:text-[#E5E5E5]">
+            This week's Studio Hours:
+          </h3>
+
+          <ul
+            class="space-y-3 mb-8 lg:mb-0 text-lg text-[#1C1C1C] dark:text-[#E5E5E5]"
+          >
+            {
+              schedule
+                .filter(event => event.title === "Studio Hours")
+                .map(event => (
+                  <li class="flex items-start">
+                    <span class="text-[#D4A73A] dark:text-[#D4A73A] mr-2">›</span>
+                    <span>
+                      <span class="font-bold">
+                        {new Date(event.date).toLocaleDateString('en-US', { weekday: 'long' })}, {event.date} at {event.time} {event.timezone}
+                      </span>
+                      {event.timezones && (
+                        <><br />
+                        <span class="text-[#1C1C1C] dark:text-[#E5E5E5] opacity-80">
+                          ({event.timezones.ET} ET / {event.timezones.PT} PT)
+                        </span>
+                        </>
+                      )}
+                    </span>
+                  </li>
+                ))
+            }
+          </ul>
+        </div>
+
+        <div
+          class="flex justify-center lg:justify-start xl:justify-center lg:items-start"
+        >
+          <Image
+            src={studioHours}
+            alt="Studio Hours illustration"
+            class="w-full max-w-md h-auto object-contain"
+          />
+        </div>
+      </div>
+
+      <p class="text-lg text-[#1C1C1C] dark:text-[#E5E5E5]">
+        Links will be shared in Discord before each session. You don't need to
+        prepare anything formal — just bring what you've got and be ready to see
+        what others are building too.
+      </p>
+    </div>
+  </section>
+
+  <!-- Prizes and Recognition Section -->
+  <section id="prizes" class="py-16">
+    <div class="container mx-auto px-8">
+      <h2
+        class="text-3xl md:text-4xl font-bold mb-8 text-[#1C1C1C] dark:text-[#E5E5E5] font-departure"
+      >
+        Prizes and Recognition
+      </h2>
+
+      <p class="text-lg mb-6 text-[#1C1C1C] dark:text-[#E5E5E5]">
+        While this isn't a traditional competition, we still want to celebrate
+        great work.
+      </p>
+
+      <p class="text-lg mb-8 text-[#1C1C1C] dark:text-[#E5E5E5]">
+        At the end of the week, we'll highlight a few standout projects during
+        the Showcase. Recognition is based on creativity, execution, and that
+        unnameable spark that makes something memorable. Think of these as
+        community shoutouts.
+      </p>
+
+      <h3 class="text-xl font-bold mb-4 text-[#1C1C1C] dark:text-[#E5E5E5]">
+        We'll be recognizing projects these categories:
+      </h3>
+
+      <ul class="space-y-3 mb-8 text-lg text-[#1C1C1C] dark:text-[#E5E5E5]">
+        {
+          awards.map(award => (
+            <li class="flex items-start">
+              <span class="text-[#D4A73A] dark:text-[#D4A73A] mr-2">›</span>
+              <span>
+                <span class="font-bold">{award.title}</span> – {award.description}
+              </span>
+            </li>
+          ))
+        }
+      </ul>
+
+      <p class="text-lg text-[#1C1C1C] dark:text-[#E5E5E5]">
+        There may also be some surprise goodies — digital or otherwise.
+      </p>
+    </div>
+  </section>
+
+  <!-- Best of Luck Section -->
+  <section id="closing" class="py-16 bg-gray-50 dark:bg-gray-800">
+    <div class="container mx-auto px-8 text-center">
+      <h2
+        class="text-3xl md:text-4xl font-bold mb-8 text-[#1C1C1C] dark:text-[#E5E5E5] font-departure"
+      >
+        Best of Luck
+      </h2>
+
+      <p
+        class="text-lg mb-6 text-[#1C1C1C] dark:text-[#E5E5E5] max-w-3xl mx-auto"
+      >
+        Look out for more updates in Discord.
+      </p>
+      <a
+        href="https://tally.so/r/3y7DK0"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="px-6 py-3 bg-[#D4A73A] text-white font-medium rounded-lg hover:bg-[#c29732] transition-colors cursor-pointer uppercase inline-block text-center"
+      >
+        Join the Community
+      </a>
+    </div>
+  </section>
+</Layout>

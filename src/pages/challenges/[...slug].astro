@@ -1,0 +1,78 @@
+---
+import ChallengeLayout from "../../layouts/ChallengeLayout.astro";
+import ChallengeHero from "../../components/ChallengeHero.astro";
+import { type CollectionEntry, getCollection, render } from "astro:content";
+
+interface Props {
+  entry: CollectionEntry<"challenges">;
+}
+
+export async function getStaticPaths() {
+  const posts = await getCollection("challenges");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+// console.log(post);
+---
+
+<ChallengeLayout
+  id={post.data.id}
+  title={post.data.title}
+  description={post.data.summary}
+  schedule={post.data.schedule}
+  awards={post.data.awards}
+>
+  <section class="py-16">
+    <div class="container mx-auto px-8">
+      <div class="prose prose-challenge dark:prose-invert">
+        <Content />
+      </div>
+    </div>
+  </section>
+</ChallengeLayout>
+
+<style is:global>
+  .prose-challenge {
+    max-width: none;
+    width: 100%;
+  }
+
+  .prose-challenge h2 {
+    @apply text-3xl md:text-4xl font-bold mb-8 text-[#1C1C1C] dark:text-[#E5E5E5] font-departure !important;
+  }
+
+  .prose-challenge h3 {
+    @apply text-xl font-bold mb-4 text-[#1C1C1C] dark:text-[#E5E5E5] !important;
+  }
+
+  .prose-challenge p {
+    @apply text-lg mb-4 text-[#1C1C1C] dark:text-[#E5E5E5] !important;
+  }
+
+  .prose-challenge ul {
+    @apply space-y-3 mb-8 text-lg text-[#1C1C1C] dark:text-[#E5E5E5] list-none pl-0 !important;
+  }
+
+  .prose-challenge li {
+    @apply flex items-start !important;
+  }
+
+  .prose-challenge li::before {
+    content: "›";
+    @apply text-[#D4A73A] dark:text-[#D4A73A] mr-2 !important;
+  }
+
+  .prose-challenge li strong {
+    @apply font-bold !important;
+  }
+
+  .prose-challenge section:nth-child(even) {
+    @apply bg-gray-50 dark:bg-gray-800 !important;
+  }
+</style>
