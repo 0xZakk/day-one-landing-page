@@ -1,7 +1,7 @@
 ---
 id: "002"
-title: "Children's Book"
-summary: "Use AI to create a children's book"
+title: "Once Upon a Bot"
+summary: "Write and illustrate a children's story — sweet, surreal, or totally unhinged — using AI."
 icon: "baby"
 schedule:
   - title: "Kickoff Call"
@@ -65,91 +65,76 @@ awards:
   - title: "Most Technically Inventive"
     description: "Clever use of tools, code, or architecture"
   
-  - title: "Best Use of Local Flavor"
-    description: "A project that really captures the spirit of its city and parks"
-  
   - title: "Didn't See That Coming"
     description: "The most unexpected, unclassifiable submission"
+  
+  - title: "Best Bedtime Energy"
+    description: "Sweetest, softest story that could actually soothe a child to sleep"
+  
+  - title: "Most Likely to Require Therapy"
+    description: "For the story that's technically for kids, but emotionally devastating enough to haunt adults for years"
 ---
 import { Image } from "astro:assets";
 import ImageGallery from "../../components/ImageGallery.astro";
-import spring from "../../assets/img/challenges/001/spring.png";
-import summer from "../../assets/img/challenges/001/summer.png";
-import fall from "../../assets/img/challenges/001/fall.png";
-import winter from "../../assets/img/challenges/001/winter.png";
-import birds from "../../assets/img/challenges/001/birds.png";
+import fire from "../../assets/img/challenges/002/fire.png";
+import sad from "../../assets/img/challenges/002/sad.png";
+import dad from "../../assets/img/challenges/002/dad.png";
+import buddhism from "../../assets/img/challenges/002/buddhism.png";
+import jobs from "../../assets/img/challenges/002/jobs.png";
 
-export const seasonalImages = [
-  { path: spring, alt: "Spring" },
-  { path: summer, alt: "Summer" },
-  { path: fall, alt: "Fall" },
-  { path: winter, alt: "Winter" },
+export const images = [
+  { path: sad, alt: "An image of a fake children's book with the title, 'What happens when you're sad?'" },
+  { path: dad, alt: "An image of a fake children's book with the title, 'What Your Dad Was Like in College'" },
+  { path: buddhism, alt: "An image of a fake children's book with the title, 'Buddhism for Babies'" },
+  { path: jobs, alt: "An image of a fake children's book with the title, 'We Used To Have These Things Called Jobs'" },
 ];
 
 ## Challenge Summary
 
-The Parks and Rec Hackathon is a week-long creative sprint to build a new digital homepage for the parks in your hometown while leveraging AI to do it.
-
-This isn't a technical competition. It's a creative one. You can build a map, a zine, a chatbot, a dreamy single-page site, or something that doesn't even look like a directory at all. The challenge on the table is to take a somewhat narrow scope and see how far you can push it creatively. There aren't many specific requirements, so use this to shine a light on the parks that make your city feel alive.
-
-Our goal with this challenge is to give you space to explore, experiment, and share your vision. Use the tools that excite you. Follow the threads that inspire you. Make something you're proud of — and surprise yourself along the way.
-
-<ImageGallery images={seasonalImages} />
-
-## Inspiration
-
-There's no right way to do this. Your "directory" could be functional, expressive, absurd, or all of the above. Below are some ideas to spark your thinking — but feel free to ignore them completely and make something that only you could make.
-
-### You might build…
-
-<div class="md:grid md:grid-cols-2 md:gap-8 mb-12">
-  <ul
-    class="space-y-3 mb-8 md:mb-0 text-lg text-[#1C1C1C] dark:text-[#E5E5E5]"
-  >
-    <li class="flex items-start">
-      <span
-        >A minimalist web app that lists your city's parks with
-        AI-generated photography</span>
-    </li>
-    <li class="flex items-start">
-      <span
-        >A vintage 90s-style site with pixel art and fake park reviews</span>
-    </li>
-    <li class="flex items-start">
-      <span>A chatbot that speaks like a poetic park ranger</span>
-    </li>
-    <li class="flex items-start">
-      <span>A mobile app with park trail maps, a "catch 'em all" feature for
-        local plants and wildlife, and an AI park ranger to guide you on a
-        narrated walk</span>
-    </li>
-    <li class="flex items-start">
-      <span
-        >A dreamy photo zine with DALL·E images and short, AI-generated
-        haikus</span>
-    </li>
-    <li class="flex items-start">
-      <span>A 3D map with custom icons and ambient soundscapes</span>
-    </li>
-    <li class="flex items-start">
-      <span>A searchable directory of local parks by mood ("quiet," "sunny,"
-        "best for dog naps")</span>
-    </li>
-    <li class="flex items-start">
-      <span>A print-on-demand coffee table book of the most beautiful parks
-        you've never heard of</span>
-    </li>
-  </ul>
-
-  <div
-    class="flex justify-center md:justify-start lg:justify-center md:items-start"
-  >
-    <Image
-      src={birds}
-      alt="Decorative bird illustration"
-      class="w-full max-w-md h-auto object-contain"
-    />
+<div class="flex flex-col md:flex-row md:items-start md:gap-8 mb-12">
+  <div class="w-full md:w-[65%] mb-6 md:mb-0">
+    <p class="text-lg mb-4">For this week's creative sprint, you're invited to step into the role of an AI-powered storyteller. Your challenge is to create a children's story from scratch — and bring it to life with AI.</p>
+    
+    <p class="text-lg mb-4">You'll write the story, generate visuals (or an animation), and present it however you want: as a picture book, a short film, an audiobook, a zine, or something weird we've never seen before.</p>
+    
+    <p class="text-lg mb-4">The vibe is up to you! It can be:</p>
+    <ul class="space-y-2 mb-4">
+      <li>Wholesome and bedtime-friendly</li>
+      <li>Full of lessons and morals</li>
+      <li>Totally deranged and adult-in-disguise à la Nobody Poops But You</li>
+    </ul>
+    
+    <p class="text-lg mb-4">The only rule is: make it feel like a children's story, whether real or twisted.</p>
+    
+    <p class="text-lg">Use this challenge to experiment with narrative structure, image generation, video tools, voice synthesis, and your own sense of humor.</p>
+  </div>
+  
+  <div class="w-full md:w-[35%]">
+    <a href="https://www.youtube.com/watch?v=bT4SGdq0ZyU" target="_blank" rel="noopener noreferrer">
+      <Image
+        src={fire}
+        alt="A page from a fake children's book that says, 'No two people are not on fire.'"
+        class="w-full h-auto max-h-[650px] object-contain"
+      />
+    </a>
   </div>
 </div>
 
-If you're using AI for visuals, try Midjourney, DALL·E, Runway, or custom-trained models. For websites and apps, tools like Vercel, Supabase, and GPT-4 can get you far. But we're tool-agnostic — whatever helps bring your idea to life is fair game.
+## Inspiration
+
+You could go cute, creepy, cozy, or cursed. Here are some jumping-off points:
+
+### You might create...
+
+- A picture book about a cat who owns a startup and loses it all
+- A short film about a lonely toaster who dreams of becoming a jazz musician
+- A sci-fi bedtime story narrated by a glitchy AI grandma
+- An illustrated guidebook to monsters that live in your closet and pay rent
+- A poetic fable about emotions that live in the clouds and cry rain down on Earth
+- A surreal, Ghibli-style animated short about a goose who wants to become a linebacker for the Raiders
+
+You can write your story using GPT-4, Claude, or on your own. For visuals, explore Midjourney, DALL·E, or Kling.ai (for animation). Combine formats if you want — a narrated slideshow, an illustrated poem, a 3D flipbook, or something else entirely.
+
+Anything that brings the story to life.
+
+<ImageGallery images={images} />
