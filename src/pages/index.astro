@@ -2,6 +2,9 @@
 import Layout from "../layouts/Layout.astro";
 import NewsletterSignup from "../components/NewsletterSignup.astro";
 import ChallengeCard from "../components/ChallengeCard.astro";
+
+import { getCollection } from "astro:content";
+const challenges = await getCollection("challenges");
 ---
 
 <Layout>
@@ -165,13 +168,19 @@ import ChallengeCard from "../components/ChallengeCard.astro";
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Challenge Card 1 -->
-        <ChallengeCard
-          title="Parks and Rec"
-          summary="Build something cool with parks and recreation data"
-          slug="001-parks-and-rec"
-          icon="tree-pine"
-          id="001"
-        />
+        {
+          [...challenges]
+            .reverse()
+            .map((challenge) => (
+              <ChallengeCard
+                id={challenge.data.id}
+                title={challenge.data.title}
+                summary={challenge.data.summary}
+                slug={challenge.slug}
+                icon={challenge.data.icon}
+              />
+            ))
+        }
 
         <!-- Challenge Card 2 -->
         <div
@@ -187,9 +196,6 @@ import ChallengeCard from "../components/ChallengeCard.astro";
           >
             More coming soon
           </h3>
-          <div class="mt-4 flex justify-end">
-            <span class="text-[#D4A73A] dark:text-[#D4A73A]">→</span>
-          </div>
         </div>
       </div>
     </div>
