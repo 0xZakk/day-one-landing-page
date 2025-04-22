@@ -13,7 +13,7 @@ const defaultNav: NavItem[] = [
   { label: "About", href: "#what-is-day-one" },
   { label: "Newsletter", href: "#newsletter" },
   { label: "Challenges", href: "#latest-challenges" },
-  { label: "Community", href: "https://tally.so/r/3y7DK0", external: true },
+  { label: "Community", href: "https://discord.gg/Q68TyN7Ykb", external: true },
 ];
 
 const challengeNav: NavItem[] = [
@@ -28,7 +28,7 @@ const challengeNav: NavItem[] = [
 
 // Determine current path and select appropriate navigation
 const path = Astro.url.pathname;
-const isChallengePage = path.includes('/challenges');
+const isChallengePage = path.includes("/challenges");
 const navItems = isChallengePage ? challengeNav : defaultNav;
 ---
 
@@ -48,19 +48,21 @@ const navItems = isChallengePage ? challengeNav : defaultNav;
     class="fixed inset-0 bg-[#3D4A3A] z-[55] flex flex-col items-start justify-center px-12 hidden md:hidden"
   >
     <ul class="w-full space-y-16">
-      {navItems.map(item => (
-        <li>
-          <a
-            href={item.href}
-            target={item.external ? "_blank" : null}
-            rel={item.external ? "noopener noreferrer" : null}
-            class="block text-4xl text-[#E5E5E5] hover:text-[#D4A73A] transition-colors uppercase font-departure"
-            style="color: #E5E5E5 !important;"
-          >
-            {item.label}
-          </a>
-        </li>
-      ))}
+      {
+        navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              target={item.external ? "_blank" : null}
+              rel={item.external ? "noopener noreferrer" : null}
+              class="block text-4xl text-[#E5E5E5] hover:text-[#D4A73A] transition-colors uppercase font-departure"
+              style="color: #E5E5E5 !important;"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
     </ul>
   </div>
 
@@ -72,16 +74,18 @@ const navItems = isChallengePage ? challengeNav : defaultNav;
       class="hover-indicator absolute h-8 bg-[#D4A73A]/25 rounded-full transition-all duration-300 ease-in-out opacity-0 pointer-events-none"
     >
     </div>
-    {navItems.map(item => (
-      <a
-        href={item.href}
-        target={item.external ? "_blank" : null}
-        rel={item.external ? "noopener noreferrer" : null}
-        class="relative px-5 py-2 text-[#E5E5E5] hover:text-[#D4A73A] transition-colors z-10 nav-link uppercase"
-        style="color: #E5E5E5 !important;"
-      >
-        {item.label}
-      </a>
-    ))}
+    {
+      navItems.map((item) => (
+        <a
+          href={item.href}
+          target={item.external ? "_blank" : null}
+          rel={item.external ? "noopener noreferrer" : null}
+          class="relative px-5 py-2 text-[#E5E5E5] hover:text-[#D4A73A] transition-colors z-10 nav-link uppercase"
+          style="color: #E5E5E5 !important;"
+        >
+          {item.label}
+        </a>
+      ))
+    }
   </div>
 </nav>
