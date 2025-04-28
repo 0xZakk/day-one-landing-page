@@ -10,6 +10,7 @@ interface NavItem {
 
 // Define navigation configurations
 const defaultNav: NavItem[] = [
+  { label: "Home", href: "/" },
   { label: "About", href: "#what-is-day-one" },
   { label: "Newsletter", href: "#newsletter" },
   { label: "Challenges", href: "#latest-challenges" },
@@ -75,16 +76,21 @@ const navItems = isChallengePage ? challengeNav : defaultNav;
     >
     </div>
     {
-      navItems.map((item) => (
-        <a
-          href={item.href}
-          target={item.external ? "_blank" : null}
-          rel={item.external ? "noopener noreferrer" : null}
-          class="relative px-5 py-2 text-[#E5E5E5] hover:text-[#D4A73A] transition-colors z-10 nav-link uppercase"
-          style="color: #E5E5E5 !important;"
-        >
-          {item.label}
-        </a>
+      navItems.map((item, idx) => (
+        <>
+          <a
+            href={item.href}
+            target={item.external ? "_blank" : null}
+            rel={item.external ? "noopener noreferrer" : null}
+            class="relative px-5 py-2 text-[#E5E5E5] hover:text-[#D4A73A] transition-colors z-10 nav-link uppercase"
+            style="color: #E5E5E5 !important;"
+          >
+            {item.label}
+          </a>
+          {idx === 0 && (
+            <span class="mx-2 text-[#D4A73A] text-lg font-bold select-none">|</span>
+          )}
+        </>
       ))
     }
   </div>
