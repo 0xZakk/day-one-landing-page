@@ -1,0 +1,145 @@
+---
+id: "003"
+title: "Automate Thyself"
+summary: "Use AI to automate part of your work or life — and show us how far you can push it."
+icon: "bot"
+schedule:
+  - title: "Kickoff Call"
+    date: "2025-04-15"
+    time: "13:00"
+    timezone: "CT"
+    timezones:
+      ET: "14:00"
+      PT: "11:00"
+    description: "We'll start with a short kickoff call to walk through the challenge, share ideas, and get inspired."
+
+  - title: "Hackathon Begins"
+    date: "2025-04-15"
+    time: "14:00"
+    timezone: "CT"
+    description: "Start building. Share early ideas, sketches, and prototypes in Discord."
+
+  - title: "Studio Hours"
+    date: "2025-04-16"
+    time: "11:00"
+    timezone: "CT"
+    timezones:
+      ET: "12:00"
+      PT: "09:00"
+    description: "Optional live session for feedback and jamming on ideas."
+
+  - title: "Studio Hours"
+    date: "2025-04-17"
+    time: "14:00"
+    timezone: "CT"
+    timezones:
+      ET: "15:00"
+      PT: "12:00"
+    description: "Optional live session for feedback and jamming on ideas."
+
+  - title: "Submissions Due"
+    date: "2025-04-20"
+    time: "14:00"
+    timezone: "CT"
+    timezones:
+      ET: "15:00"
+      PT: "12:00"
+    description: "Share a link to your project and a short write-up. A submission form will be shared near the end of the hackathon."
+
+  - title: "Demo Day"
+    date: "2025-04-21"
+    time: "11:00"
+    timezone: "CT"
+    timezones:
+      ET: "12:00"
+      PT: "09:00"
+    description: "We'll give everyone a chance to show off what they built and announce the final awards."
+
+awards:
+  - title: "Best Overall"
+    description: "The project that nails concept, execution, and style"
+  
+  - title: "Most Visually Compelling"
+    description: "Beautiful, strange, or delightfully designed"
+  
+  - title: "Most Technically Inventive"
+    description: "Clever use of tools, code, or architecture"
+  
+  - title: "Didn't See That Coming"
+    description: "The most unexpected, unclassifiable submission"
+  
+  - title: "Office Space Award"
+    description: "For the project that most successfully kills off a boring or soul-crushing task."
+  
+  - title: "Big Bot Energy"
+    description: "For the most impressive project built by someone with little to no prior automation experience."
+---
+import { Image } from "astro:assets";
+import diagram from "../../assets/img/challenges/003/diagram.png";
+import robot from "../../assets/img/challenges/003/robot.png";
+
+## Challenge Summary
+
+<div class="flex flex-col md:flex-row md:items-start md:gap-8 mb-12">
+  <div class="w-full md:w-[65%] mb-6 md:mb-0">
+    <p class="text-lg mb-4">This week, you're not just working harder — you're working smarter.<br />
+    Your mission is simple (but ambitious): pick one part of your job, your business, or your daily life, and figure out how much of it you can automate using AI tools.</p>
+
+    <p class="text-lg mb-4">You might build a custom GPT.<br />
+    You might create a workflow of agents.<br />
+    You might duct tape five different apps together with a prayer and an API key.<br />
+    It's all fair game.</p>
+
+    <p class="text-lg mb-4">The goal is to explore what's possible — to prototype something that helps you reclaim time, energy, or focus. We're not aiming for perfection. We're aiming for leverage.</p>
+
+    <p class="text-lg mb-4">You'll share:</p>
+    <ul class="space-y-2 mb-4">
+      <li>What you chose to automate</li>
+      <li>What tools you used</li>
+      <li>A demo or walkthrough of your system</li>
+      <li>What worked, what broke, and what you learned along the way</li>
+    </ul>
+
+    <p class="text-lg">Whether you end up with a sleek autonomous system or a glorious Frankenstein monster, we want to see it.</p>
+  </div>
+  <div class="w-full md:w-[35%]">
+    <Image
+      src={robot}
+      alt="A robot"
+      class="w-full h-auto max-h-[650px] object-contain"
+    />
+  </div>
+</div>
+
+## Inspiration
+
+<div class="flex flex-col md:flex-row md:items-start md:gap-8 mb-12">
+  <div class="w-full md:w-[65%] mb-6 md:mb-0">
+    <p class="text-lg mb-4">Here are some starting points:</p>
+
+    <h3 class="text-xl font-bold mb-4 text-[#1C1C1C] dark:text-[#E5E5E5]">You might create...</h3>
+    <ul class="space-y-2 mb-4">
+      <li>Build a custom GPT that answers common client questions</li>
+      <li>Set up an agent that triages your email inbox and flags important messages</li>
+      <li>Automate drafting weekly status reports based on your project management tool</li>
+      <li>Create a proposal-writing copilot for your freelance business</li>
+      <li>Use AI to handle parts of customer support (even if it's just the first draft)</li>
+      <li>Set up a daily routine assistant that plans your day based on your calendar and priorities</li>
+      <li>Automate lead generation: find new clients, scrape data, and send intro emails</li>
+      <li>Build an agent that monitors news sites and summarizes relevant articles for you</li>
+      <li>Create a content repurposing machine: turn one article into tweets, LinkedIn posts, and newsletters</li>
+      <li>Train a small model on your writing style to answer FAQs in your voice</li>
+    </ul>
+
+    <p class="text-lg mb-4">You can use anything you want to automate your work — custom GPTs with OpenAI, Projects in Claude, building bots with Lindy, or stitching together automations with Zapier AI, Make, or n8n. If you want to get fancy, you can explore tools like CrewAI, AutoGen, or Superagent for building agent workflows, or go deeper with LangChain, LlamaIndex, or Dust. You can even hack together solutions with Motion, Reclaim, Bardeen, or good old FastAPI + OpenAI if you're feeling scrappy.</p>
+
+    <p class="text-lg">The goal isn't to build something perfect — it's to explore, experiment, and see how much you can get done with a little AI leverage.</p>
+  </div>
+  <div class="w-full md:w-[35%]">
+    <Image
+      src={diagram}
+      alt="A diagram of a workflow"
+      class="w-full h-auto max-h-[650px] object-contain"
+    />
+  </div>
+</div>
