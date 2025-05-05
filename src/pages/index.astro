@@ -171,6 +171,7 @@ const challenges = await getCollection("challenges");
         {
           [...challenges]
             .reverse()
+            .slice(0, 3)
             .map((challenge) => (
               <ChallengeCard
                 id={challenge.data.id}
