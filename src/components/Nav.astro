@@ -38,7 +38,7 @@ const path = Astro.url.pathname;
 let navItems: NavItem[];
 if (path === "/") {
   navItems = defaultNav;
-} else if (path === "/challenges") {
+} else if (path === "/challenges" || path === "/challenges/") {
   navItems = challengesListNav;
 } else if (path.startsWith("/challenges/")) {
   navItems = challengeNav;
