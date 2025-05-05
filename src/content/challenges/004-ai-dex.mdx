@@ -1,0 +1,137 @@
+---
+id: "004"
+title: "AI Dex"
+summary: "Turn any fixed dataset—real, compiled, or imagined—into a creative, index-style experience like a Pokedex for something you care about."
+icon: "notebook"
+schedule:
+  - title: "Kickoff Call"
+    date: "2025-04-15"
+    time: "13:00"
+    timezone: "CT"
+    timezones:
+      ET: "14:00"
+      PT: "11:00"
+    description: "We'll start with a short kickoff call to walk through the challenge, share ideas, and get inspired."
+
+  - title: "Hackathon Begins"
+    date: "2025-04-15"
+    time: "14:00"
+    timezone: "CT"
+    description: "Start building. Share early ideas, sketches, and prototypes in Discord."
+
+  - title: "Studio Hours"
+    date: "2025-04-16"
+    time: "11:00"
+    timezone: "CT"
+    timezones:
+      ET: "12:00"
+      PT: "09:00"
+    description: "Optional live session for feedback and jamming on ideas."
+
+  - title: "Studio Hours"
+    date: "2025-04-17"
+    time: "14:00"
+    timezone: "CT"
+    timezones:
+      ET: "15:00"
+      PT: "12:00"
+    description: "Optional live session for feedback and jamming on ideas."
+
+  - title: "Submissions Due"
+    date: "2025-04-20"
+    time: "14:00"
+    timezone: "CT"
+    timezones:
+      ET: "15:00"
+      PT: "12:00"
+    description: "Share a link to your project and a short write-up. A submission form will be shared near the end of the hackathon."
+
+  - title: "Demo Day"
+    date: "2025-04-21"
+    time: "11:00"
+    timezone: "CT"
+    timezones:
+      ET: "12:00"
+      PT: "09:00"
+    description: "We'll give everyone a chance to show off what they built and announce the final awards."
+
+awards:
+  - title: "Best Overall"
+    description: "The project that nails concept, execution, and style"
+  
+  - title: "Most Visually Compelling"
+    description: "Beautiful, strange, or delightfully designed"
+  
+  - title: "Most Technically Inventive"
+    description: "Clever use of tools, code, or architecture"
+  
+  - title: "Didn't See That Coming"
+    description: "The most unexpected, unclassifiable submission"
+  
+  - title: "The Archivist"
+    description: "For the richest, weirdest, or most unexpectedly delightful dataset."
+  
+  - title: "The Infinite Scroll"
+    description: "This one goes to the entry that’s just sticky—you dive in and somehow 15 minutes go by."
+---
+import { Image } from "astro:assets";
+import books from "../../assets/img/challenges/004/books.png";
+import moons from "../../assets/img/challenges/004/moons.png";
+
+
+## Challenge Summary
+
+<div class="flex flex-col md:flex-row md:items-start md:gap-8 mb-12">
+  <div class="w-full md:w-[65%] mb-6 md:mb-0">
+    <p class="text-lg mb-4">For this week's creative sprint, you're invited to become an <strong>AI-powered archivist</strong> — building a digital field guide for anything you care about.</p>
+
+    <p class="text-lg mb-4">Your challenge is to find or invent a <strong>fixed dataset</strong> — whether it's every pasta shape, every Studio Ghibli film, or all the species on your imaginary planet — and turn it into something others can explore. This could be a Pokedex-style site, a searchable API, a minimalist visual encyclopedia, or a strange little tool for diving into weird data.</p>
+
+    <p class="text-lg mb-4">The core of the challenge is twofold: the <strong>corpus you choose</strong>, and the <strong>way you bring it to life</strong>. You can scrape data, generate it, remix public datasets, or compile your own from scratch. Then, use whatever tools you want — design, code, AI, no-code — to make the dataset feel alive.</p>
+
+    <p class="text-lg mb-4">Your index can be <strong>useful</strong>, <strong>beautiful</strong>, <strong>nostalgic</strong>, <strong>absurd</strong>, or all of the above. What matters is that you treat the data with care, and give people a reason to get lost in it.</p>
+  </div>
+  <div class="w-full md:w-[35%]">
+    <Image
+      src={books}
+      alt="Spiral bookcase library of books"
+      class="w-full h-auto max-h-[650px] object-contain"
+    />
+  </div>
+</div>
+
+## Inspiration
+
+There’s no one way to build an index. Yours can be functional, nostalgic, absurd, or all of the above. Below are some ideas to spark your thinking — feel free to remix or ignore them entirely.
+
+<div class="flex flex-col md:flex-row md:items-start md:gap-8 mb-12">
+  <div class="w-full md:w-[65%] mb-6 md:mb-0">
+    <p class="text-lg mb-4">You might create…</p>
+    <ul class="list-disc list-inside space-y-2 mb-4">
+      <li>A minimalist Pokedex-style site cataloging extinct animals, complete with AI-generated visuals</li>
+      <li>A searchable API of every Studio Ghibli film, with filters for mood, snacks, and spirit animal companions</li>
+      <li>A fictional explorer's guide to the 88 moons of Jupiter, complete with climate zones and local myths</li>
+      <li>A cursed terminal interface that lets users browse every late-night infomercial product from the '90s</li>
+      <li>A field guide to made-up fungi, with Latin names, AI art, and a toxicity index</li>
+      <li>A zine of classic pasta shapes, each one paired with a generative haiku and a historical footnote</li>
+      <li>A museum-style digital wall that shows every NPC in a video game, with lore, relationships, and alignment</li>
+      <li>An open-source index of AI agents built by the community, with prompts, use cases, and live demos</li>
+    </ul>
+  </div>
+  <div class="w-full md:w-[35%]">
+    <Image
+      src={moons}
+      alt="Fictional explorer's guide to the 88 moons of Jupiter"
+      class="w-full h-auto max-h-[650px] object-contain"
+    />
+  </div>
+</div>
+
+To build your AI-Dex, you can use:
+- GPT-4, Claude, or Perplexity for content generation  
+- DALL·E, Midjourney, or Playground for visuals  
+- Supabase, Vercel, or Airtable for data storage and hosting  
+- LangChain, LlamaIndex, or Dust for retrieval-based interfaces  
+- Or just plain HTML, a spreadsheet, and a good idea  
+
+Use whatever tools help bring your dataset to life. Combine them however you want. The more it feels like a love letter to the data, the better.
